@@ -1,3 +1,5 @@
 import '../styles/index.scss';
-
-console.log('webpack starterkit');
+import './textInputs';
+import './select';
+import './table';
+import './tasks';

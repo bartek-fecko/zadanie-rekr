@@ -1,6 +1,13 @@
-$body-color: slateblue;
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap');
+
+* {
+   box-sizing: border-box;
+}
 
 body {
-  color: $body-color;
-  font-family: sans-serif;
+   font-family: 'Source Sans Pro', sans-serif;
 }
+
+@import './input.sass';
+@import './tables.sass';
+@import './tasks.sass';

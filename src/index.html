@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>webpack starterkit</title>
 </head>
+
 <body>
-  <h1>webpack starter</h1>
-  <p>✨ A lightweight foundation for your next webpack based frontend project.</p>
+  <div class="inp-wrp">
+    <input type="text" data-key="companyName" class="inp-base inp" placeholder="Nazwa firmy" />
+    <label class="move-label-blur">Nazwa firmy</label>
+    <div class="inp-err">blad</div>
+  </div>
+  <div class="inp-wrp">
+    <div class="inp-select">
+      <input class="inp select-btn" placeholder="Pracownik" readonly />
+      <label class="move-label-blur">Pracownik</label>
+      <div class="select-content-wrp">
+        <div class="search-wrp">
+          <input type="text" class="inp inp-select-search" placeholder="Szukaj" />
+          <i class="fas fa-search"></i>
+        </div>
+        <ul>
+          <li>
+            <img src="https://picsum.photos/60/60" alt="">
+            <p>Adam Nowak</p>
+            <i class="fas fa-check"></i>
+          </li>
+          <li>
+            <img src="https://picsum.photos/60/70" alt="">
+            <p>Michał Potoczek</p>
+            <i class="fas fa-check"></i>
+          </li>
+        </ul>
+      </div>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+
+  <section class="tasks">
+    <h2>Zadania</h2>
+    <form>
+      <div class="inp-wrp">
+        <input type="text" data-key="taskName" class="inp-base inp add-task" placeholder="Nazwa zadania" />
+        <label class="move-label-blur">Nazwa zadania</label>
+        <div class="inp-err">blad</div>
+      </div>
+      <div class="inp-wrp">
+        <input type="number" data-key="plnAmount" step="1" class="inp-base inp add-pln" placeholder="Kwota w PLN" />
+        <label class="move-label-blur">Kwota w PLN</label>
+        <div class="inp-err">blad</div>
+      </div>
+      <div class="add-task-wrp">
+        <p>1 euro=4.8282</p>
+        <button type="submit">Dodaj</button>
+      </div>
+      <form>
+        <table>
+          <tr>
+            <th>Nazwa zadania <i class="fas fa-sort"></i></th>
+            <th>Kwota w PLN <i class="fas fa-sort"></i></th>
+            <th>Kwota w EUR <i class="fas fa-sort"></i></th>
+            <th>Opcje</th>
+          </tr>
+        
+        </table>
+        <h2 class="checkout" data-sum="">Suma: </h2>
+  </section>
+
+  <script src="https://kit.fontawesome.com/d37e1416a6.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

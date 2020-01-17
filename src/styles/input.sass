@@ -1,0 +1,134 @@
+$errorColor: #FF4003
+$mainBlue: #00447C
+$grayBorder: 1px solid #E1E1E1
+$blueBorder: 1px solid $mainBlue
+$inputWidth: 280px
+
+@mixin InputWrapper()
+   .inp
+      font-family: 'Source Sans Pro', sans-serif
+      padding: 6px 12px
+      color: #333333
+      width: 100%
+      font-size: 14px
+      line-height: 18px
+      letter-spacing: 1px
+      border-radius: 3px
+      letter-spacing: 0.5px
+      outline: none
+      border: $grayBorder
+      font-style: normal
+      font-weight: normal
+   label
+      font-size: 12px
+      font-weight: 600
+      color: $mainBlue
+      position: absolute
+      background-color: white
+      padding: 0 4px
+      transition: .1s all
+
+@mixin BaseInput()
+   &:focus
+      border: $blueBorder !important
+
+@mixin User()
+   ul
+      display: block
+      padding: 0
+      li
+         padding: 0 8px
+         display: flex
+         align-items: center
+         position: relative
+         cursor: pointer
+         &:hover
+            background: #F4F7FB
+         i
+            right: 8px*2
+            top: 50%
+            transform: translateY(-50%)
+         img
+            width: 8px*4
+            height: 8px*4
+            border-radius: 50% 
+         p
+            padding-left: 8px
+
+@mixin SelectInput()
+   .select-btn
+      cursor: pointer
+   i
+      color: #A9ACBE
+      position: absolute
+      right: 14px
+      top: 8px
+   label
+      color: #828282
+   .select-content-wrp
+      display: none
+      background: #FFFFFF
+      border: 1px solid #D6E2F5
+      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.04)
+      border-radius: 3px
+      .search-wrp
+         position: relative
+         padding: 0 8px 8px 8px
+         &::after
+            content: ''
+            width: 100%
+            bottom: 0
+            left: -1px
+            position: absolute
+            border: 1px solid #D6E2F5
+         input 
+            display: block
+            width: 100%
+            margin: 0 auto  
+            margin-top: 8px
+            background: #F2F4F8
+            border-radius: 3px
+            border: none
+            font-size: 14px
+            line-height: 18px
+            color: #828282
+      i
+         position: absolute
+         right: 8px*2
+      ul i 
+            display: none
+            color: $mainBlue
+      @include User
+      
+.inp-wrp
+   position: relative
+   width: $inputWidth
+   @include InputWrapper
+   .inp-select
+      @include SelectInput
+
+   .inp-base
+      @include BaseInput
+
+.inp-err
+   color: $errorColor
+   margin-bottom: 8px*2
+   font-size: 12px
+   opacity: 0
+
+.move-label-focus
+   top: -8px
+   left: 8px
+   z-index: 1
+
+.move-label-blur
+   left: 12px
+   top: 8px
+   z-index: -1
+
+.active-user
+   i
+      display: block !important
+   p
+      font-weight: 600
+      color: $mainBlue
